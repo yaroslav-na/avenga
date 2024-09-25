@@ -1,0 +1,24 @@
+@import '../mixins/index';
+
+.privacy {
+  &__container {
+    @include container;
+
+    font-size: 16px;
+  }
+
+  &__title {
+    margin-top: 60px;
+  }
+
+  &__subtitle {
+    margin-top: 20px;
+  }
+
+  &__content {
+    margin-top: 30px;
+    max-width: 1100px;
+    text-wrap: wrap;
+    font: inherit;
+  }
+}

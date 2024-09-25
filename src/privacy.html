@@ -4,8 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.min.css" />
-    <script src="js/app.min.js" defer></script>
-    <title>Avenga</title>
+    <title>Privacy | Avenga</title>
     <meta
       name="description"
       content="Avenga delivers in-depth technology consulting that supports organizations through every stage of their digital journey. From ideation and validation to design, engineering, testing, deployment, and ongoing maintenance, we accelerate digital transformation by leveraging cutting-edge analytics and artificial intelligence."
@@ -14,13 +13,13 @@
 
   <body class="page">
     @@include("html/header.html")
-    <main class="page__main">
-      @@include("html/hero.html") @@include("html/brands-bar.html")
-      @@include("html/projects.html") @@include("html/how-we-work.html")
-      @@include("html/what-we-do.html") @@include("html/advantages.html")
-      @@include("html/technologies.html") @@include("html/partnership.html")
-      @@include("html/blog.html") @@include("html/reviews.html")
-      @@include("html/faq.html") @@include("html/contact.html")
+    <main class="page__main privacy">
+      <div class="privacy__container">
+        <h1 class="privacy__title title">Privacy</h1>
+        <p class="privacy__subtitle">Avenga International GmbH</p>
+
+        @@include("html/privacy-content.html")
+      </div>
     </main>
     @@include("html/footer.html") @@include("html/modal-window.html")
   </body>
