@@ -83,6 +83,16 @@
     z-index: 1;
     left: calc(50% + 10px);
 
+    &::before {
+      box-sizing: border-box;
+      content: '';
+      height: 32px;
+      width: 100%;
+      border-bottom: 1px solid var(--accent-color);
+      border-left: 1px solid var(--accent-color);
+      border-right: 1px solid var(--accent-color);
+    }
+
     @include on-tablet {
       &--second {
         visibility: hidden;
@@ -106,16 +116,6 @@
         left: 50%;
         transform: translateX(-50%);
       }
-    }
-
-    &::before {
-      box-sizing: border-box;
-      content: '';
-      height: 32px;
-      width: 100%;
-      border-bottom: 1px solid var(--accent-color);
-      border-left: 1px solid var(--accent-color);
-      border-right: 1px solid var(--accent-color);
     }
   }
 

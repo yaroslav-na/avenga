@@ -27,11 +27,11 @@
     padding-left: var(--slider-gap);
 
     @include on-tablet {
-      flex-basis: 50%;
+      flex: 0 0 50%;
     }
 
     @include on-mobile {
-      flex-basis: 100%;
+      flex: 0 0 100%;
     }
   }
 
