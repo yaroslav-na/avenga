@@ -1,0 +1,141 @@
+@import '../mixins/index';
+
+.what-we-do {
+  &__container {
+    @include container;
+    @include grid;
+  }
+
+  &__info {
+    grid-column: span 7;
+    margin-bottom: 51px;
+
+    @include on-tablet {
+      grid-column: 1 / -1;
+      margin-bottom: 0;
+    }
+  }
+
+  &__subtitle {
+    margin-top: 15px;
+    font-size: 16px;
+  }
+
+  &__slider {
+    margin-top: 40px;
+    max-width: 590px;
+    overflow: hidden;
+    user-select: none;
+    cursor: grab;
+
+    @include on-tablet {
+      max-width: none;
+    }
+  }
+
+  &__slider-container {
+    display: flex;
+    gap: 20px;
+  }
+
+  &__slide {
+    flex: 0 0 100%;
+    min-width: 0;
+  }
+
+  &__slide-title {
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 110%;
+    color: var(--accent-color);
+  }
+
+  &__slide-text {
+    margin-top: 15px;
+  }
+
+  &__slider-controls {
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &__slider-button {
+    @include text-button;
+
+    color: var(--accent-color);
+    line-height: 0;
+    transition: color 0.15s ease;
+
+    &:disabled {
+      color: var(--accent-color-alpha);
+    }
+  }
+
+  &__button-icon {
+    width: 20px;
+    height: 20px;
+
+    &--reversed {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__person {
+    padding-right: 20px;
+    grid-column: span 5;
+    background-image: url('/src/assets/imgs/what-we-do-blob.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: flex;
+    align-items: flex-end;
+
+    @include on-tablet {
+      grid-column: 1 / -1;
+    }
+
+    @include on-mobile {
+      padding-right: 0;
+    }
+  }
+
+  &__person-info {
+    text-align: right;
+    padding-bottom: 5px;
+    width: 155px;
+  }
+
+  &__person-name {
+    font-size: 13px;
+    font-weight: 700;
+  }
+
+  &__occupation {
+    margin-top: 5px;
+    font-size: 13px;
+  }
+
+  &__image-container {
+    flex-grow: 1;
+    position: relative;
+    object-position: bottom;
+    max-height: 500px;
+
+    &::after {
+      content: '';
+      display: block;
+      padding-bottom: 117.4%;
+    }
+  }
+
+  &__image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: bottom;
+  }
+}

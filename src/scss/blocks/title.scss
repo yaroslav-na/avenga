@@ -1,0 +1,13 @@
+.title {
+  font-size: 50px;
+  font-weight: 800;
+  line-height: 1.1;
+
+  @include on-tablet {
+    font-size: 40px;
+  }
+
+  @include on-mobile {
+    font-size: 30px;
+  }
+}

@@ -1,0 +1,36 @@
+.breadcrumbs {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    &:not(:last-child)::after {
+      content: '/';
+    }
+  }
+
+  &__text {
+    font-size: 14px;
+    line-height: 1.5;
+    text-decoration: none;
+    color: var(--secondary-color);
+    transition: color 0.15s ease;
+    outline: none;
+
+    &:not(&--no-link) {
+      &:hover,
+      &:focus {
+        color: var(--accent-color);
+      }
+    }
+
+    &--no-link {
+      color: var(--primary-color);
+    }
+  }
+}

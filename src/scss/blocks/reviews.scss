@@ -1,0 +1,111 @@
+@import '../mixins/index';
+
+.reviews {
+  background: var(--accent-color-alpha-subtle);
+  padding-block: 80px;
+
+  &__container {
+    @include container;
+
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__subtitle {
+    font-size: 16px;
+    margin-top: 15px;
+    max-width: 700px;
+  }
+
+  &__slider {
+    user-select: none;
+    cursor: grab;
+    margin-top: 30px;
+    overflow: hidden;
+  }
+
+  &__slider-container {
+    display: flex;
+
+    --gap: 20px;
+
+    margin-left: calc(var(--gap) * -1);
+  }
+
+  &__slide {
+    position: relative;
+    z-index: 1;
+    flex: 0 0 50%;
+    padding: 30px;
+    padding-left: calc(30px + var(--gap));
+
+    @include on-tablet {
+      flex-basis: 100%;
+    }
+
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      z-index: -1;
+      width: calc(100% - var(--gap));
+      height: 100%;
+      right: 0;
+      top: 0;
+      background: var(--background-color);
+      border-radius: 20px;
+    }
+  }
+
+  &__slide-title {
+    font-size: 22px;
+    line-height: 1.1;
+    font-weight: 700;
+  }
+
+  &__stars {
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: var(--accent-color);
+  }
+
+  &__star {
+    width: 20px;
+    height: 20px;
+  }
+
+  &__slide-text {
+    margin-top: 20px;
+  }
+
+  &__slider-controls {
+    align-self: center;
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &__slider-button {
+    @include text-button;
+
+    color: var(--accent-color);
+    line-height: 0;
+    transition: color 0.15s ease;
+
+    &:disabled {
+      color: var(--accent-color-alpha);
+    }
+  }
+
+  &__button-icon {
+    width: 20px;
+    height: 20px;
+
+    &--reversed {
+      transform: rotate(180deg);
+    }
+  }
+}

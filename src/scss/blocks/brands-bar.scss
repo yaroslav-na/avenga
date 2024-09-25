@@ -1,0 +1,29 @@
+@import '../mixins/index';
+
+.brands-bar {
+  padding-block: 18px;
+  background: var(--accent-color);
+
+  &__container {
+    @include container;
+
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px 80px;
+
+    @include on-laptop {
+      gap: 20px 40px;
+    }
+  }
+
+  &__item {
+    height: 60px;
+  }
+
+  &__item-image {
+    width: 100%;
+  }
+}

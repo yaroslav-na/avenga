@@ -15,8 +15,8 @@ export function scss() {
           })
         )
       )
-      .pipe(plugins.replace('/src/assets/', '../assets/'))
       .pipe(plugins.sass({ outputStyle: 'expanded' }))
+      .pipe(plugins.replace('/src/assets/', '../assets/'))
       .pipe(plugins.groupCssMediaQueries())
       .pipe(plugins.webpcss({ webpClass: '.webp', noWebpClass: '.no-webp' }))
       .pipe(

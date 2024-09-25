@@ -1,0 +1,55 @@
+<section class="page__contact contact">
+  <div class="contact__container">
+    <h2 class="contact__title title">Ready to innovate in your business?</h2>
+    <p class="contact__subtitle">We! Let's start our path to success!</p>
+
+    <form data-js="contact-form" class="contact__form contact-form" action="#">
+      <input
+        autocomplete="off"
+        class="contact-form__input"
+        type="text"
+        name="full-name"
+        placeholder="Full name"
+      />
+      <input
+        autocomplete="off"
+        required
+        class="contact-form__input"
+        type="email"
+        name="eamil"
+        placeholder="Email address*"
+      />
+      <input
+        autocomplete="off"
+        required
+        class="contact-form__input"
+        type="text"
+        name="message"
+        placeholder="Message*"
+      />
+
+      <div class="contact-form__checkbox">
+        <label class="contact-form__label" for="aquainted"
+          >Yes, I have read and agree to the Data Privacy and Legal
+          Notice.*</label
+        >
+        <div class="contact-form__checkbox-box">
+          <input
+            class="contact-form__checkbox-input"
+            required
+            type="checkbox"
+            name="aquainted"
+            id="aquainted"
+          />
+          <label for="aquainted" class="contact-form__checkbox-decoy"></label>
+        </div>
+      </div>
+      <button class="contact-form__button button">
+        Send
+        <svg class="contact-form__button-icon">
+          <use xlink:href="/src/assets/imgs/icons/sprite.svg#arrow-2"></use>
+        </svg>
+      </button>
+    </form>
+  </div>
+</section>

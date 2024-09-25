@@ -1,0 +1,49 @@
+@import '../mixins/index';
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 18px 50px;
+  border: 0;
+  border-radius: 50px;
+  background: var(--accent-color);
+  text-decoration: none;
+  text-align: center;
+  font: inherit;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 130%;
+  outline: none;
+  box-shadow: inset 0 0 0 currentcolor;
+  color: var(--on-accent-color);
+  transition:
+    color 0.15s ease,
+    background-color 0.15s ease,
+    box-shadow 0.015s ease;
+
+  &:hover,
+  &:focus-visible,
+  &--outlined {
+    color: var(--accent-color);
+    background: var(--background-color);
+    box-shadow: inset 0 0 0 1px currentcolor;
+  }
+
+  &--outlined:hover,
+  &--outlined:focus-visible {
+    background: var(--accent-color);
+    color: var(--on-accent-color);
+    box-shadow: inset 0 0 0 currentcolor;
+  }
+
+  @include on-mobile {
+    padding: 10px 30px;
+  }
+
+  &__icon {
+    width: 14px;
+    height: 14px;
+  }
+}

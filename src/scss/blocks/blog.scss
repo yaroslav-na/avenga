@@ -1,0 +1,66 @@
+@import '../mixins/index';
+
+.blog {
+  &__container {
+    @include container;
+
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__slider {
+    margin-top: 30px;
+    overflow: hidden;
+    user-select: none;
+    cursor: grab;
+  }
+
+  &__slider-container {
+    --slider-gap: 20px;
+
+    display: flex;
+    margin-left: calc(var(--slider-gap) * -1);
+  }
+
+  &__slider-card {
+    flex: 0 0 calc(100% / 3);
+    padding-left: var(--slider-gap);
+
+    @include on-tablet {
+      flex-basis: 50%;
+    }
+
+    @include on-mobile {
+      flex-basis: 100%;
+    }
+  }
+
+  &__slider-controls {
+    align-self: center;
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &__slider-button {
+    @include text-button;
+
+    color: var(--accent-color);
+    line-height: 0;
+    transition: color 0.15s ease;
+
+    &:disabled {
+      color: var(--accent-color-alpha);
+    }
+  }
+
+  &__button-icon {
+    width: 20px;
+    height: 20px;
+
+    &--reversed {
+      transform: rotate(180deg);
+    }
+  }
+}

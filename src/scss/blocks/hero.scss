@@ -1,0 +1,80 @@
+@import '../mixins/index';
+
+.hero {
+  &__container {
+    @include container;
+  }
+
+  &__breadcrumbs {
+    text-wrap: nowrap;
+    overflow: auto;
+    padding-bottom: 10px;
+  }
+
+  &__grid-container {
+    align-items: center;
+    margin-top: 20px;
+
+    @include grid;
+  }
+
+  &__info {
+    grid-column: 1/7;
+
+    @include on-tablet {
+      margin-top: 20px;
+      grid-column: 1/-1;
+      order: 2;
+    }
+  }
+
+  &__title {
+    @include on-laptop {
+      font-size: 30px;
+    }
+  }
+
+  &__description {
+    max-width: 490px;
+    margin-top: 15px;
+    font-size: 16px;
+
+    @include on-tablet {
+      max-width: none;
+    }
+  }
+
+  &__button {
+    margin-top: 30px;
+  }
+
+  &__image-container {
+    position: relative;
+    grid-column: 7/13;
+    filter: drop-shadow(10px 10px var(--accent-color));
+
+    &::after {
+      content: '';
+      display: block;
+      width: 100%;
+      padding-bottom: 72.02%;
+    }
+
+    @include on-tablet {
+      grid-column: 1/-1;
+      order: 1;
+    }
+  }
+
+  &__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
+    object-fit: cover;
+    mask-image: url('/src/assets/imgs/mask.svg');
+    mask-repeat: no-repeat;
+    mask-size: contain;
+  }
+}

@@ -1,0 +1,33 @@
+@import '../mixins/index';
+
+.patrnership {
+  padding-block: 80px;
+  background: var(--accent-color);
+
+  &__title {
+    color: var(--on-accent-color);
+  }
+
+  &__container {
+    @include container;
+  }
+
+  &__items {
+    margin-top: 30px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  &__item {
+    height: 120px;
+    width: 220px;
+  }
+
+  &__image {
+    width: 100%;
+  }
+}

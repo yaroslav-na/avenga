@@ -1,0 +1,55 @@
+.accordion {
+  background: var(--accent-color-alpha-subtle);
+  padding: 30px;
+  border-radius: 20px;
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  @include on-tablet {
+    padding: 20px;
+  }
+
+  &__header {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.1;
+  }
+
+  &__button {
+    @include text-button;
+
+    flex-shrink: 0;
+    line-height: 0;
+  }
+
+  &__button-icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  &__body {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition:
+      grid-template-rows 0.15s ease,
+      margin-top 0.15s ease;
+  }
+
+  &--open {
+    .accordion__body {
+      grid-template-rows: 1fr;
+      margin-top: 20px;
+    }
+  }
+
+  &__body-inner {
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+}

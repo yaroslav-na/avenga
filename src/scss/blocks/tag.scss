@@ -1,0 +1,12 @@
+.tag {
+  @include one-liner;
+
+  max-width: 100%;
+  padding: 10px 30px;
+  border-radius: 50px;
+  background-color: var(--accent-color-alpha);
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--accent-color);
+}

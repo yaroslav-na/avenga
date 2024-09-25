@@ -1,0 +1,133 @@
+@import '../mixins/index';
+
+.how-we-work {
+  background-image: url('/src/assets/imgs/how-we-work-blob.svg');
+  background-position: top right;
+  background-repeat: no-repeat;
+  background-color: var(--primary-color);
+  color: var(--on-primary-color);
+  padding-block: 80px;
+
+  &__container {
+    @include container;
+  }
+
+  &__description {
+    margin-top: 15px;
+    font-size: 16px;
+  }
+
+  &__grid-container {
+    margin-top: 30px;
+    row-gap: 20px;
+
+    @include grid;
+
+    @include on-mobile {
+      row-gap: 0;
+    }
+  }
+
+  &__step {
+    position: relative;
+    grid-column: span 3;
+    display: flex;
+    flex-direction: column;
+
+    @include on-mobile {
+      grid-column: span 4;
+    }
+
+    &--last::after {
+      content: '';
+      display: block;
+      height: 40px;
+      margin-top: 42px;
+
+      @include on-mobile {
+        display: none;
+      }
+    }
+  }
+
+  &__step-card {
+    flex-grow: 1;
+    background: var(--background-color);
+    padding: 20px;
+    border-radius: 20px;
+    color: var(--primary-color);
+  }
+
+  &__step-tag {
+    display: inline-block;
+  }
+
+  &__step-title {
+    margin-top: 15px;
+    font-size: 22px;
+    line-height: 1.1;
+    font-weight: 700;
+  }
+
+  &__step-description {
+    margin-top: 10px;
+  }
+
+  &__next-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding-inline: 15px;
+    position: relative;
+    z-index: 1;
+    left: calc(50% + 10px);
+
+    @include on-tablet {
+      &--second {
+        visibility: hidden;
+      }
+    }
+
+    @include on-mobile {
+      padding-block: 20px;
+      left: 0;
+
+      &--second {
+        visibility: visible;
+      }
+
+      &::before {
+        position: absolute;
+        z-index: -1;
+        width: 1px;
+        height: 100%;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+
+    &::before {
+      box-sizing: border-box;
+      content: '';
+      height: 32px;
+      width: 100%;
+      border-bottom: 1px solid var(--accent-color);
+      border-left: 1px solid var(--accent-color);
+      border-right: 1px solid var(--accent-color);
+    }
+  }
+
+  &__next-step-text {
+    @include one-liner;
+
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 40px;
+    height: 40px;
+    padding-inline: 30px;
+    background: var(--accent-color);
+    border-radius: 50px;
+  }
+}
