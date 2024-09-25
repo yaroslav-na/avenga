@@ -758,8 +758,8 @@
   height: calc(100% - 10px);
   -o-object-fit: cover;
      object-fit: cover;
-  -webkit-mask-image: url("../assets/imgs/mask.svg");
-          mask-image: url("../assets/imgs/mask.svg");
+  -webkit-mask-image: url("../assets/imgs/hero/mask.svg");
+          mask-image: url("../assets/imgs/hero/mask.svg");
   -webkit-mask-repeat: no-repeat;
           mask-repeat: no-repeat;
   -webkit-mask-size: contain;
@@ -833,7 +833,7 @@
 }
 
 .how-we-work {
-  background-image: url("../assets/imgs/how-we-work-blob.svg");
+  background-image: url("../assets/imgs/how-we-work/how-we-work-blob.svg");
   background-position: top right;
   background-repeat: no-repeat;
   background-color: var(--primary-color);
@@ -1099,7 +1099,7 @@
 .what-we-do__person {
   padding-right: 20px;
   grid-column: span 5;
-  background-image: url("../assets/imgs/what-we-do-blob.svg");
+  background-image: url("../assets/imgs/what-we-do/what-we-do-blob.svg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
